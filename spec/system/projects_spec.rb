@@ -32,6 +32,7 @@ RSpec.describe "Projects", type: :system do
     sign_in user
     # ユーザーがプロジェクト画面を開き、
     visit project_path(project)
+    expect(page).to_not have_content "Completed"
     # "complete"ボタンをクリックすると
     click_button "Complete"
     # プロジェクトは完了済みとしてマークされる
