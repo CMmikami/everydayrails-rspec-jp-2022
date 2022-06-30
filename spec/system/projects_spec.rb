@@ -23,8 +23,7 @@ RSpec.describe "Projects", type: :system do
       end
     }.to change(user.projects, :count).by(1)
   end
-
-  scenario "user completes a project", do
+  scenario "user completes a project" do
     # プロジェクトを持ったユーザーを準備する
     user = FactoryBot.create(:user)
     project = FactoryBot.create(:project, owner: user)
@@ -43,3 +42,4 @@ RSpec.describe "Projects", type: :system do
     expect(page).to_not have_button "Complete"
   end
 end
+
